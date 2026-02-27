@@ -16,12 +16,3 @@ Proje Ekibi: Muhammet Bayram - Ali Rıza Akbaş
 
 [Gereksinim Analizi](Gereksinim-Analizi.md)
 
-[Durum Diyagramı](durum_diyagramı.md)
-
-[Durum Senaryoları](durum_senaryoları.md)
-
-[Front-End](Bayramlar_Auto)       [Video](FrontendVideo.mp4)
-
-Back-End
-
-Video Sunum

@@ -23,3 +23,11 @@
 6. **Piyasa Değeri Sorgulama**
    - **API Metodu:** `GET /market-value`
    - **Açıklama:** Açıklama: Araç piyasa değerinin arabam.com ve sahibinden.com verilerine göre görüntülenmesini sağlar.
+
+7. **Personel Silme:**
+  - **API Metodu:**   `DELETE /personnel`
+  - **Açıklama:** Eklenen personelleri silme işlemi yapmamızı sağlar.
+
+8. **Personel Güncelleme:**
+  - **API Metodu:**   `UPDATE /personnel`
+  - **Açıklama:** Eklenen personel bilgilerini güncelleme işlemi yapmamızı sağlar.

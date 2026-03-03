@@ -17,4 +17,7 @@
 13. **Mesaj Silme** (Muhammet Bayram)
 14. **Personel Ekleme** (Muhammet Bayram)
 15. **Personel Silme** (Muhammet Bayram)
-16. **Personel Güncelleme** (Muhammet Bayram) 
+16. **Personel Güncelleme** (Muhammet Bayram)
+
+# Gereksinim Dağılımları
+1.  [Ali Rıza'nın Gereksinimleri](ali-rıza/Gereksinimler.md)

@@ -5,7 +5,7 @@
 
 ## Proje Hakkında
 
-![Ürün Tanıtım Görseli](Product.png)
+![Ürün Tanıtım Görseli](BayramlarAuto.jpeg)
 
 **Proje Tanımı:** 
 > Bir oto galerinin ihtiyaç duyduğu tüm gereksinimler Örnek: BayramlarAuto isimli galeri otomasyonumuz, bir galerinin ihtiyaç duyduğu bütün verilerin kaydedilip bütün gereksinimlerine kolay ulaşabilmesi için tasarlandı. Kullanıcı dostu arayüzümüz ile de verileri kayıt altına almayı daha rahat hale getiriyorum. Müşterilerimiz, aradıkları ürünleri hızlı ve kolay bir şekilde bulabilir, aynı zamanda Araçların, personellerin, muhasebenin bütün bilgilerini de sorunsuz bir şekilde kontrol edebilecekler. Güvenilir veritabanı sayesinde istenildiği vakitte bütün bilgilere ulaşılabilecektir.BayramlarAuto olarak müşterilerimizin beklentilerini en üst seviyede karşılamayı hedefliyoruz.

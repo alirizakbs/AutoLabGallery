@@ -20,4 +20,5 @@
 16. **Personel Güncelleme** (Muhammet Bayram)
 
 # Gereksinim Dağılımları
-1.  [Ali Rıza'nın Gereksinimleri](ali-rıza/Gereksinimler.md)
+1.  [Ali Rıza Akbaş'ın Gereksinimleri](ali-rıza/Gereksinimler.md)
+2.   [Muhammet Bayram'ın Gereksinimleri](muhammet/Gereksinimler.md)

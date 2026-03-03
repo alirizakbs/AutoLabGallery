@@ -30,10 +30,4 @@
   - **API Metodu:**   `POST /personnel`
   - **Açıklama:**  Personel ekleme işlemi yapmamızı sağlar.
 
-9. **Personel Silme:**
-  - **API Metodu:**   `DELETE /personnel`
-  - **Açıklama:** Eklenen personelleri silme işlemi yapmamızı sağlar.
 
-10. **Personel Güncelleme:**
-  - **API Metodu:**   `UPDATE /personnel`
-  - **Açıklama:** Eklenen personel bilgilerini güncelleme işlemi yapmamızı sağlar.

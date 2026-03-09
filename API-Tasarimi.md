@@ -8,7 +8,6 @@
 
 ```yaml
 openapi: 3.0.3
-openapi: 3.0.3
 info:
   title: Araç Platformu API
   description: |

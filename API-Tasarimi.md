@@ -13,7 +13,7 @@ info:
   description: |
     Araç satış ve yönetim platformu için RESTful API.
 
-    Özellikler:
+   ## Özellikler:
     - Kullanıcı ve yönetici kimlik doğrulama
     - Personel yönetimi
     - Araç ve fotoğraf yönetimi
@@ -22,8 +22,8 @@ info:
     - Araç piyasa değeri sorgulama
   version: 1.0.0
   contact:
-    name: API Destek
-    email: support@vehicleapi.com
+    name: Ali Rıza Akbaş , Muhammet Bayram
+  
 
 servers:
   - url: https://api.vehicleapp.com/v1

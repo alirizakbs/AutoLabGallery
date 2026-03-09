@@ -1,20 +1,14 @@
 openapi: 3.0.3
 info:
   title: Araç Platformu API
-  description: |
-    Araç satış ve yönetim platformu için RESTful API.
-
-    Özellikler:
-    - Kullanıcı ve yönetici kimlik doğrulama
-    - Personel yönetimi
-    - Araç ve fotoğraf yönetimi
-    - Mesajlaşma sistemi
-    - Kredi hesaplama
-    - Araç piyasa değeri sorgulama
   version: 1.0.0
+  description: >
+    Bu API, araç satış ve yönetim platformu için tasarlanmıştır.
+    kullanıcı ve yönetici girişi, kayıt, şifre sıfırlama,
+    kredi hesaplama, araç ve fotoğraf yönetimi, personel yönetimi, mesajlaşma,
+    araç piyasa değeri sorgulama.
   contact:
-    name: API Destek
-    email: support@vehicleapi.com
+    name: Ali Rıza Akbaş, Muhammet Bayram
 
 servers:
   - url: https://api.vehicleapp.com/v1
@@ -24,17 +18,20 @@ servers:
 
 tags:
   - name: auth
-    description: Kimlik doğrulama işlemleri
-  - name: personnel
-    description: Personel yönetimi
-  - name: vehicles
-    description: Araç yönetimi
-  - name: messages
-    description: Mesajlaşma sistemi
+    description: Kullanıcı ve yönetici kimlik doğrulama işlemleri
   - name: credit
     description: Kredi hesaplama işlemleri
   - name: market
     description: Araç piyasa değeri sorgulama
+  - name: personnel
+    description: Personel yönetimi
+  - name: vehicles
+    description: Araç ve fotoğraf yönetimi
+  - name: messages
+    description: Mesajlaşma sistemi
+
+security:
+  - BearerAuth: []
 
 paths:
 
@@ -42,8 +39,8 @@ paths:
     post:
       tags:
         - auth
-      summary: Kullanıcı girişi
-      description: Email ve şifre ile kullanıcı girişi yapar ve JWT token döndürür.
+      summary: Kullanıcı Girişi
+      description: Email ve şifre ile kullanıcı girişi. Başarılı ise JWT token döner.
       requestBody:
         required: true
         content:
@@ -64,8 +61,8 @@ paths:
     post:
       tags:
         - auth
-      summary: Kullanıcı kaydı
-      description: Yeni kullanıcı oluşturur.
+      summary: Kayıt Ol
+      description: Kullanıcı ad, soyad, email, telefon ve şifre ile kayıt olur.
       requestBody:
         required: true
         content:
@@ -80,8 +77,8 @@ paths:
     post:
       tags:
         - auth
-      summary: Şifre sıfırlama
-      description: Kullanıcının email adresine şifre sıfırlama linki gönderir.
+      summary: Şifremi Unuttum
+      description: Email üzerinden şifre sıfırlama linki gönderir.
       requestBody:
         required: true
         content:
@@ -102,8 +99,8 @@ paths:
     post:
       tags:
         - auth
-      summary: Yönetici girişi
-      description: Yönetici hesabı ile sisteme giriş yapılmasını sağlar.
+      summary: Yönetici Girişi
+      description: Yönetici hesabı ile giriş yapılmasını sağlar.
       requestBody:
         required: true
         content:
@@ -118,8 +115,8 @@ paths:
     post:
       tags:
         - credit
-      summary: Kredi hesaplama
-      description: Kredi tutarı, faiz ve vadeye göre ödeme planını hesaplar.
+      summary: Kredi Hesaplama
+      description: Kredi tutarı, faiz ve vade bilgisine göre aylık ve toplam ödemeyi hesaplar.
       requestBody:
         required: true
         content:
@@ -138,7 +135,7 @@ paths:
     get:
       tags:
         - market
-      summary: Araç piyasa değeri
+      summary: Araç Piyasa Değeri
       description: Araç marka, model ve yılına göre piyasa değeri döndürür.
       parameters:
         - name: brand
@@ -161,8 +158,7 @@ paths:
     post:
       tags:
         - personnel
-      summary: Personel ekleme
-      description: Sisteme yeni personel ekler.
+      summary: Personel Ekleme
       requestBody:
         required: true
         content:
@@ -177,13 +173,19 @@ paths:
     put:
       tags:
         - personnel
-      summary: Personel güncelleme
+      summary: Personel Güncelleme
       parameters:
         - name: personnelId
           in: path
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Personnel'
       responses:
         '200':
           description: Personel güncellendi
@@ -191,7 +193,7 @@ paths:
     delete:
       tags:
         - personnel
-      summary: Personel silme
+      summary: Personel Silme
       parameters:
         - name: personnelId
           in: path
@@ -206,8 +208,7 @@ paths:
     post:
       tags:
         - vehicles
-      summary: Araç ekleme
-      description: Yeni araç kaydı oluşturur.
+      summary: Araç Model Bilgileri Ekleme
       requestBody:
         required: true
         content:
@@ -222,13 +223,22 @@ paths:
     post:
       tags:
         - vehicles
-      summary: Araç fiyat ekleme
+      summary: Araç Fiyat Bilgileri Ekleme
       parameters:
         - name: vehicleId
           in: path
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                price:
+                  type: number
       responses:
         '201':
           description: Fiyat eklendi
@@ -237,13 +247,22 @@ paths:
     post:
       tags:
         - vehicles
-      summary: Araç fotoğraf ekleme
+      summary: Araç Fotoğraf Ekleme
       parameters:
         - name: vehicleId
           in: path
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
       responses:
         '201':
           description: Fotoğraf eklendi
@@ -252,7 +271,7 @@ paths:
     put:
       tags:
         - vehicles
-      summary: Araç fotoğraf güncelleme
+      summary: Araç Fotoğraf Güncelleme
       parameters:
         - name: vehicleId
           in: path
@@ -264,6 +283,15 @@ paths:
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
       responses:
         '200':
           description: Fotoğraf güncellendi
@@ -271,7 +299,7 @@ paths:
     delete:
       tags:
         - vehicles
-      summary: Araç fotoğraf silme
+      summary: Araç Fotoğraf Silme
       parameters:
         - name: vehicleId
           in: path
@@ -291,7 +319,7 @@ paths:
     post:
       tags:
         - messages
-      summary: Mesaj gönderme
+      summary: Mesaj Gönderme
       requestBody:
         required: true
         content:
@@ -306,7 +334,7 @@ paths:
     delete:
       tags:
         - messages
-      summary: Mesaj silme
+      summary: Mesaj Silme
       parameters:
         - name: messageId
           in: path
@@ -318,9 +346,14 @@ paths:
           description: Mesaj silindi
 
 components:
+  securitySchemes:
+    BearerAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'JWT tabanlı kimlik doğrulama. "Authorization: Bearer <token>" eklenmeli.'
 
   schemas:
-
     LoginRequest:
       type: object
       required:
@@ -344,19 +377,14 @@ components:
       properties:
         firstName:
           type: string
-          example: Ahmet
         lastName:
           type: string
-          example: Yılmaz
         email:
           type: string
-          example: ahmet@email.com
         phone:
           type: string
-          example: "+905551234567"
         password:
           type: string
-          example: Guvenli123!
 
     AuthToken:
       type: object

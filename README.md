@@ -1,52 +1,53 @@
-# BayramlarAuto
+# AutoLabGallery
 
+AutoLabGallery, araç arama ve yönetim işlemleri için geliştirilen bir yazılım mühendisliği proje uygulamasıdır. Bu proje kapsamında araç ekleme, araç fiyat bilgisi ekleme, araç fotoğraf işlemleri, kullanıcı ve yönetici giriş işlemleri, mesajlaşma, kredi hesaplama, piyasa değeri sorgulama ve personel işlemleri için REST API geliştirilmiştir.
 
----
+## Proje Amacı
+Kullanıcıların araçlar ile ilgili işlemleri yapabildiği, yönetici ve personel tarafında yönetim işlemlerinin sağlandığı bir araç platformu geliştirmektir.
 
-## Proje Hakkında
+## Kullanılan Teknolojiler
+- Node.js
+- Express.js
+- REST API
+- Postman
+- Git / GitHub
 
-![Ürün Tanıtım Görseli](BayramlarAuto.jpeg)
+## Backend Gereksinimleri
+### Ali Rıza Akbaş
+- POST /auth/login
+- POST /auth/register
+- POST /auth/forgot-password
+- POST /auth/admin/login
+- POST /credit/calculate
+- GET /market-value
+- PUT /personnel/{personnelId}
+- DELETE /personnel/{personnelId}
 
-**Proje Tanımı:** 
-> Bir oto galerinin ihtiyaç duyduğu tüm gereksinimler Örnek: BayramlarAuto isimli galeri otomasyonumuz, bir galerinin ihtiyaç duyduğu bütün verilerin kaydedilip bütün gereksinimlerine kolay ulaşabilmesi için tasarlandı. Kullanıcı dostu arayüzümüz ile de verileri kayıt altına almayı daha rahat hale getiriyorum. Müşterilerimiz, aradıkları ürünleri hızlı ve kolay bir şekilde bulabilir, aynı zamanda Araçların, personellerin, muhasebenin bütün bilgilerini de sorunsuz bir şekilde kontrol edebilecekler. Güvenilir veritabanı sayesinde istenildiği vakitte bütün bilgilere ulaşılabilecektir.BayramlarAuto olarak müşterilerimizin beklentilerini en üst seviyede karşılamayı hedefliyoruz.
+### Muhammet Bayram
+- POST /personnel
+- POST /vehicles
+- POST /vehicles/{vehicleId}/price
+- POST /vehicles/{vehicleId}/images
+- PUT /vehicles/{vehicleId}/images/{imageId}
+- DELETE /vehicles/{vehicleId}/images/{imageId}
+- POST /messages
+- DELETE /messages/{messageId}
 
+## Dosyalar
+- API Tasarımı: `API-Tasarimi.md`
+- OpenAPI Dosyası: `AutoLabGallery.yaml`
+- Gereksinim Analizi: `Gereksinim-Analizi.md`
 
-**Proje Kategorisi:** 
-> Oto Galeri Programı
-**Referans Uygulama:** 
-> (https://www.akinsoft.com.tr/programlar/detay/netgaleri--woe4)
----
+## Grup Üyeleri
+- Ali Rıza Akbaş
+- Muhammet Bayram
 
-## Proje Linkleri
+## Backend Domain
+BURAYA_BACKEND_DOMAIN_LINKI_GELECEK
 
-- **REST API Adresi:**
-- **Web Frontend Adresi:** 
+## Video Sunum Linkleri
+- Ali Rıza Akbaş: BURAYA_VIDEO_LINKI_GELECEK
+- Muhammet Bayram: BURAYA_VIDEO_LINKI_GELECEK
 
----
-
-## Proje Ekibi
-
-
-**Grup Adı:** 
-> AutoLabGallery
-**Ekip Üyeleri:** 
--Ali Rıza Akbaş
--Muhammet Bayram
----
-
-## Dokümantasyon
-
-Proje dokümantasyonuna aşağıdaki linklerden erişebilirsiniz:
-
-1. [Gereksinim Analizi](Gereksinim-Analizi.md)
-2. [REST API Tasarımı](API-Tasarimi.md)
-3. [REST API](Rest-API.md)
-4. [Web Front-End](WebFrontEnd.md)
-5. [Mobil Front-End](MobilFrontEnd.md)
-6. [Mobil Backend](MobilBackEnd.md)
-7. [Video Sunum](Sunum.md)
-
----
-
-
-
+## Not
+Bu repoda backend geliştirme, API tasarımı ve gereksinim analizleri yer almaktadır. Frontend aşaması tamamlandığında frontend domain ve ilgili md dosyaları da eklenecektir.
